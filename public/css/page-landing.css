@@ -10,7 +10,11 @@
 #container {
   margin: auto;
 
-  width: 90%;
+  width: min(90%, 112rem);
+}
+
+#logo {
+  animation-delay: 100ms;
 }
 
 .location,
@@ -31,15 +35,12 @@ h1,
   justify-content: center;
   margin: 0 auto;
   transition: background 200ms;
+  animation-delay: 300ms;
 }
 
 .visit a:hover {
     background: #96feff;
 
-}
-
-#logo {
-  animation-delay: 100ms;
 }
 
 .location {
@@ -48,12 +49,70 @@ h1,
 
 main h1 {
   animation-delay: 200ms;
+  font-size: clamp(4rem, 8vw, 8.4rem);
 }
 
 .visit p {
   animation-delay: 250ms;
 }
 
+
+
+/* desktop version */
+@media (min-width: 760px) {
+
+#container{
+  /* shorthand background: image repeat position / size */
+  background: url("../images/bg.svg") no-repeat;
+  background-position: 80%;
+  background-size: clamp(30rem, 54vw, 56rem);
+  padding: 5rem 2rem;
+}
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+main h1{
+  
+  font-weight: bold;
+  width: min(300px, 80%);
+  line-height: .88;
+
+  margin: clamp(10%, 9vh, 12%) 0 4rem;
+
+}
+
+.location,
+h1,
+.visit p {
+  height: initial;
+  text-align: initial;
+}
+
+.location {
+  text-align: right;
+  font-size: 2.4rem;
+  line-height:1.5;
+}
+
+.visit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.visit p {
+  font-size: 2.4rem;
+  line-height:1.5;
+  width: clamp(20rem, 20vw, 30rem)
+}
+
 .visit a {
-  animation-delay: 300ms;
+  margin: initial;
+}
+
 }
